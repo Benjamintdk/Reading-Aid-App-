@@ -1,12 +1,12 @@
 # You Only Read Once 
 
-#### TLDR: We built upon an existing transformer based a pretrained model that produces segmented summaries (i.e. it performs text segmentation and summarisation at one shot). If you're not interested in the background or motivations behind our project, feel free to skip straight to the code. 
+#### TLDR: We built upon an existing transformer-based pretrained model that produces segmented summaries (i.e. it performs text segmentation and summarisation at one shot). If you're not interested in the background or motivations behind our project, feel free to skip straight to the code. 
 
 ### Background to this project
-This project started of with the intention of wanting to build an application which can help people improve their reading abilities. 
+This project began with the initial intention to build an application which can help people improve their reading abilities. 
 Many current book summarization services such as Blinkist or Audible attempt to bridge this gap by summarizing books into small, bite-sized content easily digestable by modern day consumers who are too busy to afford time reading an entire book. 
 However, we believe that reading is still quintessential and there are many benefits wrought by finishing a well-written bound book that cannot be gained simply by reading its summary. <br><br>
-Can we instead help users to develop a habit of reading faster and more effectively such that reading isn't seen as an imposition on the intricacies of daily routines? We certainly hope that this app would do so. 
+Can we instead help users to develop a habit of reading faster and more effectively such that reading isn't seen as an imposition on the intricacies of daily routine? We certainly hope that this app would do so. 
 
 ### Inspiration for YORO
 The idea behind how we would get people to read faster and more effectively was simple: invoke better recall and master the famed "block reading" which many fast readers today employ to devour multiple tens of books a year. As such, our app would have to be able to identify segments in a large chunk of text and perform summarisation on these segments. An example of how this might occur is shown below.  
