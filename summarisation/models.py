@@ -1,9 +1,9 @@
 from transformers import BartForConditionalGeneration, BartConfig
-import torch import nn
+from torch import nn
 import torch
 
 #Function to load model depending on whether or not it is pretrained
-def load_hf_model(config, pretrained=False, path=None, device=device):
+def load_hf_model(config, pretrained=False, path=None):
     if pretrained:
         if path:
             model = BartForConditionalGeneration.from_pretrained(
@@ -16,7 +16,7 @@ def load_hf_model(config, pretrained=False, path=None, device=device):
     else:
         model = BartForConditionalGeneration()
 
-    return model.to(device)
+    return model
 
 #Parametrize BART into its different layer groups
 def bart_splitter(model):
