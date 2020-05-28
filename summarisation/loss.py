@@ -9,13 +9,13 @@ class SummarisationLoss(nn.Module):
         self.criterion = torch.nn.CrossEntropyLoss()
 
     def forward(self, output, target):
-        #output is a 3D tensor of dimension batch_size x sequence length x 1024(fixed vector output size)
-        #target is also of the same shape: batch_size x sequence length x 1024(fixed vector output size)
+        #output is a 3D tensor of dimension batch_size x sequence length x 50264(vocab_size)
+        #target is of the shape: batch_size x sequence length
         #x is of the same dimension as the output as softmax is applied to the second dimension(along sequence length)
         x = F.log_softmax(output, dim=-1)
         #norm calculates the sum of values in the target not equal to 1, i.e. not empty since 1 is used for padding
         norm = (target != 1).data.sum()
-        #first reshape x into a 2D tensor of size (batch_size*sequence length) x 1024(last dimension)
+        #first reshape x into a 2D tensor of size (batch_size*sequence length) x 50264(last dimension)
         #contiguous ensures that the ordering of the values in x remains intact
-        #then reshape the target likewise
+        #then reshape the target into a 1D tensor of size (batch_size*sequence length)
         return self.criterion(x.contiguous().view(-1, x.size(-1)), target.contiguous().view(-1)) / norm
