@@ -1,5 +1,6 @@
 from torch import nn
 from torch.nn import functional as F
+import torch 
 
 #Defines summarisation loss function
 class SummarisationLoss(nn.Module):
