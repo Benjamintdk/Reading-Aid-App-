@@ -7,12 +7,12 @@ def load_hf_model(config, pretrained=False, path=None):
     if pretrained:
         if path:
             model = BartForConditionalGeneration.from_pretrained(
-                "bart-large-cnn",
+                "facebook/bart-large-cnn",
                 state_dict=torch.load(path, map_location=torch.device('cuda')),
                 config=config
             )
         else:
-            model = BartForConditionalGeneration.from_pretrained("bart-large-cnn", config=config)
+            model = BartForConditionalGeneration.from_pretrained("facebook/bart-large-cnn", config=config)
     else:
         model = BartForConditionalGeneration()
 
