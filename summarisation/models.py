@@ -36,5 +36,5 @@ class FastaiWrapper(nn.Module):
 
     def forward(self, x):
         output = self.bart(x)[0]
-        print("Output" + output)
+        print(output)
         return output
